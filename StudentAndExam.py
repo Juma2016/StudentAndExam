@@ -20,7 +20,9 @@ while True:
         print('Enter Student martikel number: ')
         martikelNumber=input()
 
-        students={"firstName":firstName,"lastName":lastName,"martikelNumber":martikelNumber}
+        student={"firstName":firstName,"lastName":lastName,"martikelNumber":martikelNumber} #making temporary variable and add it then in dictionary
+
+        students.append(student) # to make more than dictionary in students
         
 
     elif(choosen==2):
@@ -52,7 +54,11 @@ while True:
             print('Unkown Student')
         else:
             for student in students:
-                print(f"{student['firstName']} {student['lastName']} (martikelNumber: {student['martikelNumber']})")
+                fname = student["firstName"]
+                lname = student["lastName"]
+                mid = student["martikelNumber"]
+                print(f"{fname} {lname} (martikelNumber: {mid})")
+
     elif(choosen==0):
         print('Good Bye :)')
         break
