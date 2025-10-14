@@ -1,5 +1,5 @@
-students=[] # dictionary
-exercise={} # to save all data about student
+students=[] # list to save all data about student
+exercise={} # dictionary, where the exercises and points will be stored
 
 while True:
     print('Welcome in Student and exam Portal')
@@ -32,8 +32,8 @@ while True:
         for student in students:
             print('please add the number of points for each student for that exercise')
             mark=int(input())
-            mark = input(f"Enter points for {student['first_name']} {student['last_name']}: ")
-            points[student['martikel']] = mark
+            mark = input(f"Enter points for {student['firstName']} {student['lastName']}: ")
+            points[student[' martikelNumber']] = mark
 
             exercise[idNumber]=points
 
@@ -47,7 +47,7 @@ while True:
                     name=next((f'{student["firstName"]}{student["lastName"]}'
                                for student in students
                                  if student['martikelNumber']== martikelNumber),
-                                    'unkown')
+                                    'unknown')
                     print(f'{name}({martikelNumber}): {score} points')
     elif(choosen==4):
         if not students:
