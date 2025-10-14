@@ -32,8 +32,8 @@ while True:
         for student in students:
             print('please add the number of points for each student for that exercise')
             mark=int(input())
-            mark = input(f"Enter points for {student['firstName']} {student['lastName']}: ")
-            points[student[' martikelNumber']] = mark
+            mark = input(f"Enter points for {student['first name']} {student['last name']}: ")
+            points[student['martikelNumber']] = mark
 
             exercise[idNumber]=points
 
@@ -46,8 +46,7 @@ while True:
                 for martikelNumber,score in points.items():
                     name=next((f'{student["firstName"]}{student["lastName"]}'
                                for student in students
-                                 if student['martikelNumber']== martikelNumber),
-                                    'unknown')
+                                 if student['martikelNumber']== martikelNumber), 'unknown')
                     print(f'{name}({martikelNumber}): {score} points')
     elif(choosen==4):
         if not students:
