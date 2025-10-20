@@ -19,8 +19,16 @@ while True:
         lastName=input()
         print('Enter Student martikel number: ')
         martikelNumber=input()
-
-        student={"firstName":firstName,"lastName":lastName,"martikelNumber":martikelNumber} #making temporary variable and add it then in dictionary
+student_exists= False
+        for student in students:
+            if student['martikelNumber']== martikelNumber:
+                student_exists=True
+                break
+        if student_exists:
+            print(f'Error: Student with martikel number {martikelNumber} already existiert!')
+            continue
+        else:
+            student={"firstName":firstName,"lastName":lastName,"martikelNumber":martikelNumber} #making temporary variable and add it then in dictionary
 
         students.append(student) # to make more than dictionary in students
         
